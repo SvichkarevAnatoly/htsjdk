@@ -83,8 +83,11 @@ public class SequenceUtil {
             bases[(byte) i + 32] = bases[(byte) i];
         }
         bases['.'] = A_MASK | C_MASK | G_MASK | T_MASK;
-    };
+    }
 
+    public static int getReadBaseHashCode(final byte readBase) {
+        return bases[readBase];
+    }
 
     /**
      * Calculate the reverse complement of the specified sequence
